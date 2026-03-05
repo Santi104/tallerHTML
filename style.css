@@ -1,6 +1,7 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
     font-family: monospace;
 }
 
@@ -28,33 +29,128 @@
     text-decoration: none;
     font-size: 20px;
     color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+    color: rgb(215, 186, 186);
 }
 
 .main-container {
-    margin-top: 25px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.articles {
+    margin: 25px 0 25px 0;
     display: flex;
     justify-content: center;
     gap: 8vw;
 }
 
-.first-article, .second-article {
+.article-text {
+    margin: 13px;
+}
+
+.first-article,
+.second-article {
+    display: flex;
     text-align: center;
-    width: 22vw;
-    height: 24vw;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: auto;
     border: 1px solid rgb(225, 225, 225);
     border-radius: 1%;
+    transition: 0.5s ease-in-out;
+    min-width: 350px;
+    min-height: 400px;
 }
 
-.first-article div, .second-article div {
-    width: 18vw;
-    text-align: left;
-    margin: 10px;
-    margin-left: 2vw;
+.first-article:hover,
+.second-article:hover {
+    transform: scale(1.1);
+    background-color: whitesmoke;
 }
 
-.first-article img, .second-article img{
-    width: 18vw;
+.first-article img,
+.second-article img {
+    min-width: 280px;
+    width: 14vw;
     margin-top: 15px;
     border: 1px solid rgb(225, 225, 225);
 }
 
+.contact {
+    margin-top: 40px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+input,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 120px;
+    padding: 10px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.table-section{
+margin-top:40px;
+margin-bottom: 7vh;
+}
+
+.table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th, td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#eee;
+}
+
+.total{
+font-weight:bold;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    background-color: rgb(56, 57, 57);
+}
+
+footer p {
+    margin-top: 5vh;
+    color: white;
+}
+
+@media (max-width:820px)  {
+    .articles {
+        flex-direction: column;
+        align-items: center;
+    }
+}
